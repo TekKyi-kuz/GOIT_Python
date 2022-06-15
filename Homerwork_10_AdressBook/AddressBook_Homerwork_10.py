@@ -38,12 +38,16 @@ class Phone(Field):
     def __init__(self, phone):
         if re.search('\+\d{12}', phone) != None:
             self.value = phone
-        
-r = Record('Tetiana Oliinyk')
+    
+    def __repr__(self) -> str:
+        return self.value
+
+
+r = Record('Tatyana')
 r.add_phone(Phone('+380972248800'))
 r.add_phone('+380976706960')
 r.edit_phone('+380976706960','+380681085720')
-print(type(Phone('+380972248800')))
+#print(type(Phone('+380681085720')))
 print(r.name.value)
 for p in r.phones:
     print(p.value)
