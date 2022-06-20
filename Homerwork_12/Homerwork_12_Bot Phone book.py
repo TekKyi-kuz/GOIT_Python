@@ -5,6 +5,7 @@ import math
 import re
 import json
 
+
 class AddressBook(UserDict):
     def __init__(self, name):
         super().__init__()
@@ -391,6 +392,12 @@ def listener():
 
 
 a = AddressBook("Work telephones")
-a.load("Work telephones.json")
+#a.load("Work telephones.json")
+#a.dump("Work telephones.json")
+
+if "Work telephones.json":
+    a.load("Work telephones.json")
+else:
+    a.dump("Work telephones.json")
+
 listener() 
-a.dump("Work telephones.json")
